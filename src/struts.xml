@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+	"http://struts.apache.org/dtds/struts-2.3.dtd">
+<struts>
+	<!-- 指定全局国际化资源文件 -->
+	<constant name="struts.custom.i18n.resources" value="mess" />
+	<constant name="struts.enable.DynamicMethodInvocation" value="false" />
+	<constant name="struts.devMode" value="false" />
+	<!-- 所有的Action定义都应该放在package下 -->
+	<package name="crazyit" namespace="/" extends="struts-default">
+	
+		<!-- 添加新员工信息 -->
+		<action name="addemployee" class="Action.insertEmployeeAction">
+			<result name="error">/WEB-INF/content/addEmployeeError.jsp</result>
+			<result name="success">/WEB-INF/content/addEmployeeYes.jsp</result>
+		</action>
+		<!-- 添加新入库单信息 -->
+		<action name="insertInput" class="Action.insertInputHouseAction">
+			<result name="error">/WEB-INF/content/addEmployeeError.jsp</result>
+			<result name="success">/WEB-INF/content/addEmployeeYes.jsp</result>
+		</action>
+		<!-- 删除员工信息 -->
+		<action name="deleteemployee" class="Action.deleteEmployeeAction">
+			<result name="error">/WEB-INF/content/deleteEmployeeError.jsp</result>
+			<result name="success">/WEB-INF/content/deleteEmployeeYes.jsp</result>
+		</action>
+		<!-- 查询员工信息 -->
+		<action name="searchemployee" class="Action.searchEmployeeAction">
+			<result name="error">/WEB-INF/content/searchEmployeeError.jsp</result>
+			<result name="success">/WEB-INF/content/searchEmployeeYes.jsp</result>
+		</action>
+		<!-- 修改员工信息 -->
+		<action name="changeemployee" class="Action.changeEmployeeAction">
+			<result name="error">/WEB-INF/content/changeEmployeeError.jsp</result>
+			<result name="success">/WEB-INF/content/changeEmployeeYes.jsp</result>
+		</action>
+		<!-- 添加供货商信息 -->
+		<action name="addsupplier" class="Action.addSupplierAction">
+			<result name="error">/WEB-INF/content/inputSupplierError.jsp</result>
+			<result name="success">/WEB-INF/content/inputSupplierYes.jsp</result>
+		</action>
+		
+		<!-- 查询供货商信息 -->
+		<action name="searchsupplier" class="Action.searchSupplierAction">
+			<result name="error">/WEB-INF/content/searchSupplierError.jsp</result>
+			<result name="success">/WEB-INF/content/searchSupplierYes.jsp</result>
+		</action>
+		
+		<!-- 修改供货商信息 -->
+		<action name="changesupplier" class="Action.changeSupplierAction">
+			<result name="error">/WEB-INF/content/changeSupplierError.jsp</result>
+			<result name="success">/WEB-INF/content/changeSupplierYes.jsp</result>
+		</action>
+		
+		<!-- 添加会员信息 -->
+		<action name="addmember" class="Action.addMemberAction">
+			<result name="error">/WEB-INF/content/addMemberError.jsp</result>
+			<result name="success">/WEB-INF/content/addMemberYes.jsp</result>
+		</action>
+		
+		<!-- 查询会员信息 -->
+		<action name="searchmember" class="Action.searchMemberAction">
+			<result name="error">/WEB-INF/content/searchMemberError.jsp</result>
+			<result name="success">/WEB-INF/content/searchMemberYes.jsp</result>
+		</action>
+		
+		<!-- 添加商品信息 -->
+		<action name="addcommodity" class="Action.addCommodityAction">
+			<result name="error">/WEB-INF/content/addCommodityError.jsp</result>
+			<result name="success">/WEB-INF/content/addCommodityYes.jsp</result>
+		</action>
+		
+		<!-- 查询商品信息 -->
+		<action name="searchcommodity" class="Action.searchCommodityAction">
+			<result name="error">/WEB-INF/content/searchCommodityError.jsp</result>
+			<result name="success">/WEB-INF/content/searchCommodityYes.jsp</result>
+		</action>
+		
+		<!-- 销售信息查询 -->
+		<action name="searchshipper" class="Action.searchShipperAction">
+			<result name="error">/WEB-INF/content/searchShipperError.jsp</result>
+			<result name="success">/WEB-INF/content/searchShipperYes.jsp</result>
+		</action>
+		<action name="*">
+			<result>/WEB-INF/content/{1}.jsp</result>
+		</action>
+		
+	</package>
+	
+	<package name="new" namespace="/api/json" extends="json-default">
+		<action name="searchemployeeByname" class="Action.searchEmployeeActionJson">
+			<result type="json">
+				<param name="root">result</param>
+			</result>
+		</action>
+		<action name="searchWarehouse" class="Action.searchWarehouseActionJson">
+			<result type="json">
+				<param name="root">result</param>
+			</result>
+		</action>
+		<action name="searchSupplier" class="Action.searchSupplierActionJson">
+			<result type="json">
+				<param name="root">result</param>
+			</result>
+		</action>
+		<action name="searchCommodity" class="Action.searchCommodityActionJson">
+			<result type="json">
+				<param name="root">result</param>
+			</result>
+		</action>
+		<action name="addshipper" class="Action.addShipperActionJson">
+			<result type="json">
+				<param name="root">result</param>
+			</result>
+		</action>
+		<action name="searchmainnum" class="Action.searchMainNumActionJson">
+			<result type="json">
+				<param name="root">result</param>
+			</result>
+		</action>
+	</package>
+	
+</struts>
