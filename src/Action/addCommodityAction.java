@@ -6,7 +6,6 @@ public class addCommodityAction {
 	private String Cnum;
 	private String category;
 	private int quantity;
-	private float price;
 	private String Cname;
 	
 	public void setCnum(String Cnum)
@@ -32,13 +31,6 @@ public class addCommodityAction {
 	public int getQuantity()
 	{
 		return this.quantity;
-	}public void setPrice(float price)
-	{
-		this.price = price;
-	}
-	public float getPrice()
-	{
-		return this.price;
 	}
 	public void setCname(String Cname)
 	{
@@ -52,7 +44,7 @@ public class addCommodityAction {
 	{
 		boolean flag=false;
 		try {
-			flag =new Insert().insertCommodity(Cnum, category, quantity, price, Cname);
+			flag =new Insert().insertCommodity(Cnum, category, quantity, Cname);
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			return "error";

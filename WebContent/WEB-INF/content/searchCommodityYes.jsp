@@ -181,7 +181,6 @@
                                             <td><%=p.Cname %></td>
                                             <td><%=p.category %></td>
                                             <td><%=p.quantity %></td>
-                                            <td><%=p.price %></td>
                                         </tr>
                                         
                                     </tbody>

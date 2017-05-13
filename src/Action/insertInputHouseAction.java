@@ -1,6 +1,8 @@
 package Action;
 
+import connect.JDBC.Delete;
 import connect.JDBC.Insert;
+import connect.JDBC.Update;
 
 public class insertInputHouseAction {
 	private String Wnum;
@@ -12,13 +14,7 @@ public class insertInputHouseAction {
 	private int quantity;
 	private String Snum;
 	private String Enum;
-	
-	private float price;
-	private String category;
-	private String Cname;
-
-
-	
+		
 	public void setWnum(String Wnum)
 	{
 		this.Wnum = Wnum;
@@ -94,52 +90,48 @@ public class insertInputHouseAction {
 		return this.Enum;
 	}
 	
-	
-	
-	
-	public void setCategory(String category)
-	{
-		this.category = category;
-	}
-	public String getCategory()
-	{
-		return this.category;
-	}
-	public void setCname(String Cname)
-	{
-		this.Cname = Cname;
-	}
-	public String getCname()
-	{
-		return this.Cname;
-	}
-	public void setPrice(float price)
-	{
-		this.price = price;
-	}
-	public float getPrice()
-	{
-		return this.price;
-	}
-	
-
-	
-	
-	
-	
+		
 	public String execute() 
 	{
 		boolean flag=false;
-		/*try {
-			flag =new Insert().insertWarehouse(Wnum, indate, Cnum, unit, inprice, outprice, quantity, totalamount, Snum, Enum);
+		try {
+			flag =new Insert().insertWarehouse(Wnum, indate, Cnum, unit, inprice, outprice, quantity, Snum, Enum);
+			System.out.println("111111111111");
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			return "error";
 		}
-		if(flag)
-			return "success";*/
+		if(!flag){
+			return "error";
+		}
+		System.out.println("22222222222");
+		try {
+			flag = new Update().updateComodity(Cnum, this.quantity);
+		} catch (Exception e) {
+			try {
+				new Delete().deletewarehouse(this.Wnum);
+			} catch (Exception e1) {
+				// TODO Auto-generated catch block
+				e1.printStackTrace();
+				return "error";
+			}
+			e.printStackTrace();
+			return "error";
+		}
+		System.out.println("333333333333333");
+		if(!flag){
+			try {
+				new Delete().deletewarehouse(this.Wnum);
+			} catch (Exception e1) {
+				// TODO Auto-generated catch block
+				e1.printStackTrace();
+				return "error";
+			}
+			return "error";
+		}
+		return "success";
 		
-		return "error";
+		
 	   
 	}
 	

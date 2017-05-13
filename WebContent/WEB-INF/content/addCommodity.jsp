@@ -155,10 +155,6 @@
                                 	<input class="form-control" type="text" name="quantity" value="0">
                                 </div>
                                 <div class="form-group">
-                                	<label>单价</label>
-                                	<input class="form-control" type="text" name="price">
-                                </div>
-                                <div class="form-group">
                                 	<label>商品名称</label>
                                 	<input class="form-control" type="text" name="Cname" value="">
                                 </div>

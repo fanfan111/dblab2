@@ -51,7 +51,7 @@
                     </li>
 					<li>
                         <a href="#"><i class="fa fa-yelp "></i>员工管理 <span class="fa arrow"></span></a>
-                         <ul class="nav nav-second-level"">
+                         <ul class="nav nav-second-level">
                             <li>
                                 <a  href="http://localhost:8080/DBLab3/addEmployee"><i class="fa fa-coffee"></i>员工入职登记</a>
                             </li>

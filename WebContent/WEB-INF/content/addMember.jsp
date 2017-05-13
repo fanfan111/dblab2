@@ -163,7 +163,7 @@
                                 	<label>身份证号</label>
                                 	<input class="form-control" type="text" name="idnum">
                                 </div>
-                               <div class="form-group">
+                               <div class="form-group" >
                                 	<label>消费金额</label>
                                 	<input class="form-control" type="text" name="consumption">
                                 </div>

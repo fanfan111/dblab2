@@ -92,7 +92,7 @@ public class Insert {
 	}
 	
 	public boolean insertCommodity(String Cnum,String category,
-			int quantity,float price,String Cname) throws Exception {
+			int quantity, String Cname) throws Exception {
 		Class.forName("com.mysql.jdbc.Driver"); 
 		Connection connect = DriverManager.getConnection
 				("jdbc:mysql://localhost:3306/supermarket","root","123456");
@@ -103,7 +103,7 @@ public class Insert {
 			return false;
 		}
 		stmt.execute("insert into Commodity values('"+Cnum+"','"+Cname+"','"+category
-				+"','"+quantity+"',"+ "'"+price+"');");
+				+"','"+quantity+"');");
 		
 		rs = stmt.executeQuery(" select * from Commodity where Cnum='"+Cnum+"';");
 		if(rs.next()){
@@ -113,7 +113,7 @@ public class Insert {
 	}
 	public boolean insertWarehouse(String Wnum,String indate,String Cnum,
 			String unit,float inprice,float outprice,int quantity,
-			float totalamount,String Snum,String Enum) throws Exception {
+			String Snum,String Enum) throws Exception {
 		Class.forName("com.mysql.jdbc.Driver"); 
 		Connection connect = DriverManager.getConnection
 				("jdbc:mysql://localhost:3306/supermarket","root","123456");
@@ -123,7 +123,7 @@ public class Insert {
 		if(rs.next()){
 			return false;
 		}
-		stmt.execute("insert into Commodity values('"+Wnum+"','"+indate+"','"+Cnum+"',"
+		stmt.execute("insert into Warehouse values('"+Wnum+"','"+indate+"','"+Cnum+"',"
 				+ "'"+unit+"','"+inprice+"','"+outprice+"','"+quantity+
 				"','"+Snum+"','"+Enum+"');");
 		

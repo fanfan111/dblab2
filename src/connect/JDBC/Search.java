@@ -125,7 +125,6 @@ public class Search {
 			result.category=rs.getString("category");
 			result.Cname=rs.getString("Cname");
 			result.Cnum=rs.getString("Cnum");
-			result.price=Float.parseFloat(rs.getString("price"));
 			result.quantity=Integer.parseInt(rs.getString("quantity"));
 		}else{
 			return null;
@@ -148,7 +147,6 @@ public class Search {
 			p.category=rs.getString("category");
 			p.Cname=rs.getString("Cname");
 			p.Cnum=rs.getString("Cnum");
-			p.price=Float.parseFloat(rs.getString("price"));
 			p.quantity=Integer.parseInt(rs.getString("quantity"));
 			result.add(p);
 		}

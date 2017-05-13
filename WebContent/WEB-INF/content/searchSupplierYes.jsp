@@ -82,10 +82,10 @@
 						<ul class="nav nav-second-level  collapse in">
 
 							<li>
-                                <a class="active-menu"	 href="http://localhost:8080/DBLab3/inputSupplier"><i class="fa fa-coffee"></i>添加供货商信息</a>
+                                <a  href="http://localhost:8080/DBLab3/inputSupplier"><i class="fa fa-coffee"></i>添加供货商信息</a>
                             </li>
 							<li>
-                               <a  href="http://localhost:8080/DBLab3/searchSupplier"><i class="fa fa-coffee"></i>详情查询</a>
+                               <a class="active-menu"	 href="http://localhost:8080/DBLab3/searchSupplier"><i class="fa fa-coffee"></i>详情查询</a>
                            </li>
                             <li>
                                 <a href="http://localhost:8080/DBLab3/changeSupplier"><i class="fa fa-flash "></i>信息修改</a>
@@ -151,7 +151,7 @@
                 <!-- /. ROW  -->
                 <div class="row">
                 <div class="col-md-1 col-sm-6 col-xs-12"></div>
-                <div class="col-md-6 col-sm-6 col-xs-12">
+                <div class="col-md-10 col-sm-6 col-xs-12">
                <div class="panel panel-success">
                         <div class="panel-heading">
                            您可能想要的信息

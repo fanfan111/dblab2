@@ -7,11 +7,11 @@ import net.sf.json.JSONObject;
 public class searchCommodityActionJson {
 	private String Cnum;
 	protected JSONObject result;
-	public void setSnum(String Snum)
+	public void setCnum(String Cnum)
 	{
 		this.Cnum = Cnum;
 	}
-	public String getSnum()
+	public String getCnum()
 	{
 		return this.Cnum;
 	}

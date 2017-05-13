@@ -120,9 +120,9 @@
                     
                     <li>
                         <a href="#"><i class="fa fa-yelp "></i>出售记录 <span class="fa arrow"></span></a>
-						<ul class="nav nav-second-level collapse in">
+						<ul class="nav nav-second-level ">
                             <li>
-                                <a class="active-menu" href="http://localhost:8080/DBLab3/addShipper"><i class="fa fa-coffee"></i>新出货单</a>
+                                <a   href="http://localhost:8080/DBLab3/addShipper"><i class="fa fa-coffee"></i>新出货单</a>
                             </li>
                             <li>
                                 <a href="http://localhost:8080/DBLab3/searchShipper"><i class="fa fa-flash "></i>出售信息查询</a>

@@ -155,7 +155,7 @@
                            
                         </div>
                         <div class="panel-body">
-                            <form role="form" action="addSupplier">
+                            <form role="form" action="addsupplier">
                             	<div class="form-group">
                                 	<label>供货商编号</label>
                                    	<input class="form-control" type="text" name="Snum">
@@ -170,7 +170,7 @@
                                 </div>
                                 <div class="form-group">
                                 	<label>电话号码</label>
-                                	<input class="form-control" type="password" name="telephonenum">
+                                	<input class="form-control" type="text" name="telephonenum">
                                 </div>
                                 <div class="form-group">
                                 	<label>联系人</label>

@@ -17,8 +17,8 @@
 		</action>
 		<!-- 添加新入库单信息 -->
 		<action name="insertInput" class="Action.insertInputHouseAction">
-			<result name="error">/WEB-INF/content/addEmployeeError.jsp</result>
-			<result name="success">/WEB-INF/content/addEmployeeYes.jsp</result>
+			<result name="error">/WEB-INF/content/inputHouseError.jsp</result>
+			<result name="success">/WEB-INF/content/inputHouseYes.jsp</result>
 		</action>
 		<!-- 删除员工信息 -->
 		<action name="deleteemployee" class="Action.deleteEmployeeAction">

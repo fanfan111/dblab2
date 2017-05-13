@@ -69,6 +69,26 @@ public class Delete {
 		}
 		return true;
 	}
-	
+	public boolean deletewarehouse(String Wnum) throws Exception {
+		Class.forName("com.mysql.jdbc.Driver"); 
+		Connection connect = DriverManager.getConnection
+				("jdbc:mysql://localhost:3306/supermarket","root","123456");
+
+		Statement stmt = connect.createStatement();
+		ResultSet rs = stmt.executeQuery(" select * from Warehouse where Wnum='"+Wnum+"';");
+		if(!rs.next()){
+			return false;
+		}
+		
+		String sql="delete from Warehouse where Wnum='"+Wnum+"';";
+		System.out.println(sql);
+		stmt.execute(sql);
+		
+		rs = stmt.executeQuery(" select * from Warehouse where Wnum='"+Wnum+"';");
+		if(rs.next()){
+			return false;
+		}
+		return true;
+	}
 	
 }

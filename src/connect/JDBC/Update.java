@@ -71,4 +71,26 @@ public class Update {
 		return true;
 		
 	}
+	public boolean updateComodity(String Cnum,int num) throws Exception {
+		Class.forName("com.mysql.jdbc.Driver"); 
+		Connection connect = DriverManager.getConnection
+				("jdbc:mysql://localhost:3306/supermarket","root","123456");
+		Statement stmt = connect.createStatement();
+		
+		ResultSet rs = stmt.executeQuery(" select * from Commodity where Cnum='"+Cnum+"';");
+		int num1=0;
+		if(rs.next()){
+			num1=rs.getInt("quantity")+num;
+		}else{
+			return false;
+		}
+		
+		String sql="update commodity set quantity='"+num1+"' where Cnum='"+Cnum+"';";
+		
+		System.out.println(sql);
+		stmt.execute(sql);
+		
+		return true;
+		
+	}
 }
